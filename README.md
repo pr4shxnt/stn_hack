@@ -8,7 +8,6 @@
 
 Built for the **Superteam Nepal University Tour - Sunway College Mini-Hack**.
 
-
 ## 🚀 Mission
 
 Janamat Forum is a decentralized platform designed to empower Nepali tech talent and citizens to share opinions freely and securely. By leveraging the Solana blockchain, we ensure that every vote is transparent and immutable, while maintaining user privacy through wallet-based identity.
@@ -126,7 +125,11 @@ During development, we solved several critical challenges:
 
 ## 👥 Authors
 
-- **Prashant** - Lead Developer (Author)
+- **Prashant** - Lead Developer (Author) [Visit](https://www.prashantadhikari7.com.np)
+
+## 👥 Assets
+
+- **Demo Video** - [Watch](https://www.youtube.com/watch?v=XMyrn6PKgMU)
 
 ## 📝 License
 
