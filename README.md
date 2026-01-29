@@ -74,7 +74,7 @@ anchor deploy
 # Copy the generated IDL to the frontend
 cp target/idl/janamat_forum.json ../frontend/src/lib/idl.json
 
-solana account J5t84a3NbVBUEzi3qfaQBTVpT5egmV6e6E6MeQfr7yHi --url http://localhost:8899
+solana account <YOUR WALLET ADDRESS> --url http://localhost:8899
 ```
 
 ### 2. Backend API
