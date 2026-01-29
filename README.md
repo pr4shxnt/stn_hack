@@ -2,7 +2,7 @@
 
 [![Node.js](https://img.shields.io/badge/Node.js-19.x-brightgreen)](https://nodejs.org/)
 [![Solana](https://img.shields.io/badge/Solana-solana%20cli%203.0.x-blue)](https://reactnative.dev/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15.x-black)](https://nextjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-6.x-green)](https://www.mongodb.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
