@@ -1,0 +1,250 @@
+{
+  "address": "J5t84a3NbVBUEzi3qfaQBTVpT5egmV6e6E6MeQfr7yHi",
+  "metadata": {
+    "name": "janamat_forum",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "create_forum",
+      "discriminator": [
+        233,
+        228,
+        176,
+        133,
+        191,
+        4,
+        200,
+        212
+      ],
+      "accounts": [
+        {
+          "name": "forum",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "daily_limit",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  105,
+                  109,
+                  105,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "creator"
+              },
+              {
+                "kind": "arg",
+                "path": "date"
+              }
+            ]
+          }
+        },
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "date",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "vote",
+      "discriminator": [
+        227,
+        110,
+        155,
+        23,
+        136,
+        126,
+        172,
+        25
+      ],
+      "accounts": [
+        {
+          "name": "vote_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  111,
+                  116,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "forum"
+              },
+              {
+                "kind": "account",
+                "path": "voter"
+              }
+            ]
+          }
+        },
+        {
+          "name": "forum",
+          "writable": true
+        },
+        {
+          "name": "voter",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "vote_type",
+          "type": "i8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "DailyForumLimit",
+      "discriminator": [
+        126,
+        210,
+        14,
+        96,
+        220,
+        195,
+        60,
+        104
+      ]
+    },
+    {
+      "name": "ForumAccount",
+      "discriminator": [
+        9,
+        19,
+        91,
+        123,
+        37,
+        89,
+        68,
+        119
+      ]
+    },
+    {
+      "name": "VoteAccount",
+      "discriminator": [
+        203,
+        238,
+        154,
+        106,
+        200,
+        131,
+        0,
+        41
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidVoteType",
+      "msg": "Vote type must be +1 or -1"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidDate",
+      "msg": "Date must be the current date"
+    }
+  ],
+  "types": [
+    {
+      "name": "DailyForumLimit",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "date",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ForumAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "forum_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "creator",
+            "type": "pubkey"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "upvotes",
+            "type": "u64"
+          },
+          {
+            "name": "downvotes",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VoteAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "voter",
+            "type": "pubkey"
+          },
+          {
+            "name": "target_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "vote_type",
+            "type": "i8"
+          }
+        ]
+      }
+    }
+  ]
+}
